@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Friday Cleaners Group</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: lightblue;
+      margin: 20px;
+    }
+    #table-container {
+      max-width: 800px;
+      margin: auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #87CEFA; 
+      color: white;
+    }
+    tr:hover {
+      background-color: lightblue;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background: brown;
+      color: white;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 style="text-align: center;">Friday Cleaners Group</h1>
+  <div id="table-container"></div>
+
+  <footer>
+    <p>Created by Bismark L. De Asis</p>
+  </footer>
+
+  <script>
+    const students = [
+      { name: "Ervin Pesidas", age: 17, lrn: "107976120132", address: "Poblacion 4-A IMUS CITY CAVITE", birthday: "2006-05-10" },
+      
+      { name: "Ella Taray", age: 18, lrn: "107985768711", address: "Poblacion 4-A IMUS CITY CAVITE", birthday: "2007-05-20" },
+      
+      { name: "Bismark L. De Asis", age: 19, lrn: "107985768712", address: "Medicion 2-B IMUS CAVITE", birthday: "2004-12-20" },
+      
+      { name: "Kim Villoso", age: 19, lrn: "107973140010", address: "401 Ilano Apartment Unit-C Medicion 1-D IMUS CAVITE", birthday: "2005-10-19" },
+      
+      { name: "Judelyn", age: 17, lrn: "107985120400", address: "278 Manggahan lawin IMUS CAVITE", birthday: "2006-11-30" },
+      
+      { name: "Jamil", age: 19, lrn: "107974120759", address: "Poblacion 1-A IMUS CAVITE", birthday: "2005-04-05" },
+      
+      { name: "Mallari", age: 19, lrn: "107870130476", address: "By Pass 212 Barangay Samalabanan Medicion 2-C", birthday: "2006-11-27" }
+    ];
+
+    function createTable(students) {
+      let tableHTML = `<table>
+                          <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>LRN</th>
+                            <th>Address</th>
+                            <th>Birthday</th> <!-- New column for Birthday -->
+                          </tr>`;
+
+      students.forEach(student => {
+        tableHTML += `<tr>
+                        <td>${student.name}</td>
+                        <td>${student.age}</td>
+                        <td>${student.lrn}</td>
+                        <td>${student.address}</td>
+                        <td>${student.birthday}</td> <!-- Display birthday -->
+                      </tr>`;
+      });
+
+      tableHTML += `</table>`;
+      return tableHTML;
+    }
+
+    const tableContainer = document.getElementById('table-container');
+    tableContainer.innerHTML = createTable(students);
+  </script>
+</body>
+
+</html>
